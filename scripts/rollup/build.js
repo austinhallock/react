@@ -230,13 +230,13 @@ function getFormat(bundleType) {
 function isProductionBundleType(bundleType) {
   switch (bundleType) {
     case NODE_ES2015:
-    case NODE_ESM:
     case UMD_DEV:
     case NODE_DEV:
     case FB_WWW_DEV:
     case RN_OSS_DEV:
     case RN_FB_DEV:
       return false;
+    case NODE_ESM:
     case UMD_PROD:
     case NODE_PROD:
     case UMD_PROFILING:
