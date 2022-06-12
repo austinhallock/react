@@ -261,30 +261,29 @@ const bundles = [
   // },
 
   /******* React DOM Server *******/
-  {
-    bundleTypes: [
-      // UMD_DEV,
-      // UMD_PROD,
-      // NODE_DEV,
-      NODE_ESM,
-      // NODE_PROD,
-      // FB_WWW_DEV,
-      // FB_WWW_PROD,
-    ],
-    moduleType: RENDERER,
-    entry: 'react-dom/src/server/ReactDOMLegacyServerBrowser.js',
-    name: 'react-dom-server-legacy.browser',
-    global: 'ReactDOMServer',
-    minifyWithProdErrorCodes: true,
-    wrapWithModuleBoundaries: false,
-    externals: ['react'],
-    babel: opts =>
-      Object.assign({}, opts, {
-        plugins: opts.plugins.concat([
-          [require.resolve('@babel/plugin-transform-classes'), {loose: true}],
-        ]),
-      }),
-  },
+  // {
+  //   bundleTypes: [
+  //     UMD_DEV,
+  //     UMD_PROD,
+  //     NODE_DEV,
+  //     NODE_PROD,
+  //     FB_WWW_DEV,
+  //     FB_WWW_PROD,
+  //   ],
+  //   moduleType: RENDERER,
+  //   entry: 'react-dom/src/server/ReactDOMLegacyServerBrowser.js',
+  //   name: 'react-dom-server-legacy.browser',
+  //   global: 'ReactDOMServer',
+  //   minifyWithProdErrorCodes: true,
+  //   wrapWithModuleBoundaries: false,
+  //   externals: ['react'],
+  //   babel: opts =>
+  //     Object.assign({}, opts, {
+  //       plugins: opts.plugins.concat([
+  //         [require.resolve('@babel/plugin-transform-classes'), {loose: true}],
+  //       ]),
+  //     }),
+  // },
   // {
   //   bundleTypes: [NODE_DEV, NODE_PROD],
   //   moduleType: RENDERER,
@@ -302,16 +301,17 @@ const bundles = [
   // },
 
   // /******* React DOM Fizz Server *******/
-  // {
-  //   bundleTypes: [NODE_DEV, NODE_PROD, UMD_DEV, UMD_PROD],
-  //   moduleType: RENDERER,
-  //   entry: 'react-dom/src/server/ReactDOMFizzServerBrowser.js',
-  //   name: 'react-dom-server.browser',
-  //   global: 'ReactDOMServer',
-  //   minifyWithProdErrorCodes: true,
-  //   wrapWithModuleBoundaries: false,
-  //   externals: ['react'],
-  // },
+  {
+    // bundleTypes: [NODE_DEV, NODE_PROD, UMD_DEV, UMD_PROD],
+    bundleTypes: [NODE_ESM],
+    moduleType: RENDERER,
+    entry: 'react-dom/src/server/ReactDOMFizzServerBrowser.js',
+    name: 'react-dom-server.browser',
+    global: 'ReactDOMServer',
+    minifyWithProdErrorCodes: true,
+    wrapWithModuleBoundaries: false,
+    externals: ['react'],
+  },
   // {
   //   bundleTypes: [NODE_DEV, NODE_PROD],
   //   moduleType: RENDERER,

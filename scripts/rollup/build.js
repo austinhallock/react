@@ -741,7 +741,7 @@ async function buildEverything() {
   }
 
   await Packaging.copyAllShims();
-  await Packaging.prepareNpmPackages();
+  // await Packaging.prepareNpmPackages();
 
   if (syncFBSourcePath) {
     await Sync.syncReactNative(syncFBSourcePath);
